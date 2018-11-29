@@ -1,0 +1,11 @@
+server:
+  port: 8888
+
+fdfs:
+  tracker-list: 172.26.1.53:22122
+  storage-host: 172.26.1.53
+  storage-port: 80
+  thumb-image:
+    height: 50
+    width: 50
+

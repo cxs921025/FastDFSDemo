@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fastdfs Demo</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+<body>
+<div>
+    <input id="file" type="file" onchange="upload(this.files)">
+    <div>
+        文件地址：
+        <p id="filePath"></p>
+    </div>
+</div>
+</body>
+<script>
+    function upload(files) {
+        var formData = new FormData();
+        formData.append("files",files[0]);
+        $.ajax({
+            type: "post",
+            url: "http://localhost:8888/fastdfs/upLoad",
+            data: formData,
+            contentType: false,
+            processData: false,
+            dataType: "json",
+            success: function(response){
+                if(response.isSuccess){
+                    $("#filePath").html(response.filePath);
+                }
+            }
+        });
+    }
+</script>
+</html>
