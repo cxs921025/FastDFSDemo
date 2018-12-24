@@ -2,10 +2,18 @@ server:
   port: 8888
 
 fdfs:
+  # tracker 服务器 访问地址
+  # 可以是多个：
+  # tracker-list:
+  #               -172.26.1.53:22122
+  #               -172.26.1.54:22122
   tracker-list: 172.26.1.53:22122
+  # storage 代理 nginx 所属ip
   storage-host: 172.26.1.53
+  # storage 代理 nginx 监听端口
   storage-port: 80
+  # 缩略图 宽高设置
   thumb-image:
-    height: 50
     width: 50
+    height: 50
 
